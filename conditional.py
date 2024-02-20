@@ -12,3 +12,5 @@ elif (height1 == height2):
   print(f"{person1} and {person2} are of same height")
 else:
   print(f"{person2} is taller")
+
+#elif - many | else - one

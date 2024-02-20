@@ -52,6 +52,5 @@ output = str(output).strip("*")
 
 if(output == code):
   print("You are an hacker")
-
 else:
   print("try again")

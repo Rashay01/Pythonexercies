@@ -1,3 +1,4 @@
+#===================================================================================
 # Task -> Farhenhiet to Celcius
 
 #declration
@@ -10,7 +11,7 @@
 
 #{} - interpolation
 
-
+#===================================================================================
 #Task -> Find the age of the perso if the birth year is given
 
 # import datetime
@@ -20,6 +21,7 @@
 # curr_age = curr_year - int(birth_year)
 # print(f"Your age is: {curr_age}")
 
+#===================================================================================
 #Task given the radius give the area of the circle
 
 # import math

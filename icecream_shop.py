@@ -1,4 +1,4 @@
-
+#===================================================================================
 #task1
 #Dry - dont repeat yourself
 
@@ -19,7 +19,7 @@
 #   print("No, we ran out of stock")
 
 
-
+#===================================================================================
 #Task2
 # shop_stock = "vanilla, lime, chocolate"
 
@@ -31,7 +31,7 @@
 # else:
 #   print(f"No, we ran out of stock of {flavour}")
 
-
+#===================================================================================
 #Refactored for ternar operators
 shop_stock = "vanilla, lime, chocolate"
 

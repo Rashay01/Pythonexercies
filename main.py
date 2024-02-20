@@ -1,9 +1,52 @@
-from flask import Flask
+# Task -> Farhenhiet to Celcius
 
-app = Flask('app')
+#declration
+# farenheit = input("Please provide your Farenheit: ")
 
-@app.route('/')
-def hello_world():
-  return 'Hello, World!'
+# celcius = (float(farenheit) - 32) * 5/9
 
-app.run(host='0.0.0.0', port=8080)
+# print("The " + str(farenheit) + "°F is: " + str(celcius) + "°C")
+# print(f"The {farenheit}°F is:{celcius} °C")
+
+#{} - interpolation
+
+
+#Task -> Find the age of the perso if the birth year is given
+
+# import datetime
+
+# birth_year = input("What year are you born in? ")
+# curr_year = datetime.date.today().year
+# curr_age = curr_year - int(birth_year)
+# print(f"Your age is: {curr_age}")
+
+#Task given the radius give the area of the circle
+
+# import math
+
+# radius = input("radius of circle")
+# area_circle = math.pi * float(radius) ** 2
+# print(f"The area of the circle is {area_circle}")
+
+#Task -> Build a loader
+# percentage = input("Please provide your percentage: ")
+# progress = float(percentage)//10
+# bar = "=" * int(progress)
+# empty = " " * (10 - int(progress))
+# print(f"[{bar}{empty}] {percentage}%")
+
+# substring
+
+quote ="I love python"
+#splicing operater
+# print(quote[start:end]) print(quote[inclusive:exclusive]) 
+
+# quote[2] = 'x' ERROR it is immutable
+
+# print(quote[2:6])
+# print(quote[-1])
+print(quote[-6:])
+print(quote[::2])
+print(quote[::-1])
+
+x = None #NUll initilisation  

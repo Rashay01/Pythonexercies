@@ -41,3 +41,4 @@ ans = "Yes, we do have it"  if flavour in stocks else "No, we ran out of stock"
 
 print(ans)
 
+#in is membership operator

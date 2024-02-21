@@ -24,7 +24,7 @@ person = {
 #Iteable -> List, Tuple, dict_keys 
 # print(person.keys())
 # print(person.values())
-# print(person.items())
+print(person.items())
 
-for key, value in person.items():
-  print(key, value)
+# for key, value in person.items():
+#   print(key, value)

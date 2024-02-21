@@ -24,10 +24,10 @@
 # print(t1, t2, t3)
 
 # # * -> unpacking operator
-# t1, t2, *t3 = [100, 200,300,400, 60, 40, 30] #all emaining values are in t3 in list form
+# t1, t2, *t3 = [100, 200, 300, 400, 60, 40, 30] #all emaining values are in t3 in list form
 # print(t1, t2, t3)
 
-# t1, t2, *t3 = (100, 200,300,400, 60, 40, 30) #all emaining values are in t3 in list form
+# t1, t2, *t3 = (100, 200, 300, 400, 60, 40, 30) #all emaining values are in t3 in list form
 # print(t1, t2, t3)
 
 #==========================================================================================

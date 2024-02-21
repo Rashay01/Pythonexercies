@@ -7,5 +7,3 @@ scrambled_message = "world the save to time no is there"
 words = scrambled_message.split()
 print(" ".join(words[::-1]))
 
-#======================================================================
-#task2

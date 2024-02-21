@@ -55,10 +55,15 @@ print(char_count)
 
 #================================================================
 # task3 all the names of all the avengers with 10 chars
-char_over_10 =[]
+# char_over_10 =[]
 
-for i in range(len(char_count)):
-  if(char_count[i] > 10):
-    char_over_10.append(avengers[i])
+# for i in range(len(char_count)):
+#   if(char_count[i] > 10):
+#     char_over_10.append(avengers[i])
 
-print(char_over_10)
+# print(char_over_10)
+
+#-------------------------------alternative------------------------------------ 
+#list comphrension
+filtered_names = [avenger.upper() for avenger in avengers if len(avenger) > 10]
+print(filtered_names)

@@ -56,3 +56,67 @@ print(ans)
 ans2 = set(colors)
 print(ans2, list(ans2))
 
+print()
+print()
+#===========================================================================================
+outdoor_activities = {'Hiking', 'Cycling', 'Swimming'}
+indoor_activities = {'Gaming', 'Reading', 'Cycling'}
+activity_gadgets = {'Smartwatch': 'Hiking', 'VR Headset': 'Gaming', 'Smartphone': 'Reading', 'Drone': 'Cycling'}
+
+#--------------------------------------------Task 1-------------------------------------
+# Task 1
+# Which are outdoor_gadgets ? 
+# {'Smartwatch',  'Drone'}
+print("Task 1")
+new_outdoor_gadgets = set()
+for key, value in activity_gadgets.items():
+  if value in outdoor_activities:
+    new_outdoor_gadgets.add(key)
+print(new_outdoor_gadgets)
+
+#or
+
+new_outdoor_activities1 = {key for key, value in activity_gadgets.items() 
+  if  value in outdoor_activities}
+
+print(new_outdoor_activities1)
+
+#or
+
+new_outdoor_gadgets2 = set([key for key, value in activity_gadgets.items() 
+                              if  value in outdoor_activities])
+
+print(new_outdoor_gadgets2)
+
+#--------------------------------------------Task 2-------------------------------------
+# Task 2
+# # Which are indoor_gadgets ?
+print("Task 2")
+new_indoor_gadgets = set()
+for key, value in activity_gadgets.items():
+  if value in indoor_activities:
+    new_indoor_gadgets.add(key)
+
+print(new_indoor_gadgets)
+
+
+#--------------------------------------------Task 3-------------------------------------
+# Task 3
+print("Task 3")
+def get_activity_gadgets(activity_gadgets, activity_list):
+  return set([gadget for gadget, activity in activity_gadgets.items() 
+              if activity in activity_list])
+
+
+print(get_activity_gadgets(activity_gadgets,outdoor_activities))
+print(get_activity_gadgets(activity_gadgets,indoor_activities))
+
+
+#or
+
+def get_activity_gadgets1(activity_gadgets, activity_list):
+  return {gadget for gadget, activity in activity_gadgets.items() 
+              if activity in activity_list}
+
+print(get_activity_gadgets1(activity_gadgets,outdoor_activities))
+print(get_activity_gadgets1(activity_gadgets,indoor_activities))

@@ -46,7 +46,7 @@ super_boosted_stats = map(lambda x: x * 2, [(10, 6), (60, 4), (12, 2)])
 print(list(super_boosted_stats))
 
 
-#higher oder function
+#higher order function
 def greeting(hello_message, name):
   print(hello_message() + name)
 

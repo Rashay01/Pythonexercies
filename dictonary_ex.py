@@ -312,6 +312,7 @@ movie = {
 # movie_copy2 = {**movie, "rating" : 10}
 # print(movie_copy2)
 
+#overrides the left value to left value if the right value has the same key   
 # movie_copy3 = {**movie, "rating" : 10, "year" : 2002}
 # print(movie_copy3)
 

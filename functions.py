@@ -46,7 +46,7 @@ print(driving_test("Gemma",20))
 #print(driving_test(21,"Dhara")) #TypeError will occur
 
 #Keyword argument
-print(driving_test(age=21,name="Dhara"))
+print(driving_test(age=21,name="Dhara")) 
 
 def driving_test1(name, age=15, car = "Toyota tazz"):
   if age >= 18:
@@ -54,5 +54,10 @@ def driving_test1(name, age=15, car = "Toyota tazz"):
   else:
     return "Try again after few years 👶🍼"
 
-print(driving_test1("Gemma"))
+print(driving_test1("Gemma")) #order matters - position arguments
 
+#Pass allows you still call the function without the function body
+def func_name( test1, test2):
+  pass
+
+func_name(1,2)

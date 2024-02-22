@@ -29,13 +29,7 @@
 # for key, value in person.items():
 #   print(key, value)
 
-# person = {
-#   "name" : " Siya Kolisi",
-#   "age" : 32,
-#   "height" : 186,
-#   "country" : "South Africa",
-#   "sport" : "Rugy"
-# }
+#
 
 # #Safty for value
 # print(person.get("height"))
@@ -58,7 +52,9 @@
 # print(person["address"].get("city"))
 # print(person["address"]["city"])
 
-# print(person.get("stats",{}).get("city"))
+#print(person.get("stats").get("city")) #AttributeError NoneType
+
+#print(person.get("stats",{}).get("city"))
 
 #dictonary comprehension
 nums = {x: x**2 for x in range(10)}

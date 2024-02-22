@@ -301,10 +301,10 @@ books = [
 #=======================================================================================
 # Copy
 
-# movie = {
-#   "name": "Mr Bones",
-#   "year": 2001,
-# }
+movie = {
+  "name": "Mr Bones",
+  "year": 2001,
+}
 
 # movie_copy = movie.copy()
 
@@ -312,38 +312,38 @@ books = [
 # movie_copy2 = {**movie, "rating" : 10}
 # print(movie_copy2)
 
-# # movie_copy3 = {**movie, "rating" : 10, "year" : 2002}
-# # print(movie_copy3)
+# movie_copy3 = {**movie, "rating" : 10, "year" : 2002}
+# print(movie_copy3)
 
 # movie_copy4 = {"rating" : 10, "year" : 2002, **movie}
 # print(movie_copy4)
 
-movie = {
-  "name": "Mr Bones",
-  "year": 2001,
-}
+# movie = {
+#   "name": "Mr Bones",
+#   "year": 2001,
+# }
 
-detail = {
-  "actor" : "Leon",
-  "director" : "Dizthendo"
-}
+# detail = {
+#   "actor" : "Leon",
+#   "director" : "Dizthendo"
+# }
 
-movie_details = {**movie, **detail} #preffered
-print(movie_details)
+# movie_details = {**movie, **detail} #preffered
+# print(movie_details)
 
-#-----------------------------List ---------------------------------------------
-price = [1000, 1200, 400]
-price_copy = [*price]
-print(price_copy)
+# #-----------------------------List ---------------------------------------------
+# price = [1000, 1200, 400]
+# price_copy = [*price]
+# print(price_copy)
 
-price_copy1 = [*price, 50, 60]
-print(price_copy1)
+# price_copy1 = [*price, 50, 60]
+# print(price_copy1)
 
-t1 = [80, 90]
-t2 = [50, 100]
+# t1 = [80, 90]
+# t2 = [50, 100]
 
-t3 = [*t1, *t2]
-print(t3)
+# t3 = [*t1, *t2]
+# print(t3)
 
 test ={}
 

@@ -10,6 +10,8 @@ library = [
 #Task 1
 #creat a function given a new book add to libary 
 #add_book(libary, new_book)
+#Pass by refrence - can be changed 
+#Pass by value -  pass the a copy
 
 new_book = {"title": "Test Programming", "author": "Test Test", "year": 2015, 
             "available" : True}

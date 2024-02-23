@@ -1,5 +1,6 @@
 #String, List, Tuble, Dictonary, Set
 #Sets - Like List Mutable but only uniquie
+#order doesnt matter
 
 # {}
 

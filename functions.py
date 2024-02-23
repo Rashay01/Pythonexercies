@@ -21,7 +21,7 @@ def sum(a, b):
 #Abstraction the logic | Hiding implemntation 
 
 
-#Abstraction ( hiding) - logic 
+#Abstraction ( hiding implematation) - logic 
 print("The sum is: ",sum(30,50))
 
 

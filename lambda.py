@@ -94,7 +94,11 @@ print(mul(3)(6))
 
 #HOF - argument is a function
 result1 = map(lambda x: x * 2,[10, 30, 60])
-result2 = filter(lambda x:x >10, [10, 50, 60, 100, 6, 8 ,30])
+#Filter 
+#the function that it acceptsmust return a boolean 
+#If it is true you get in the final result 
+#if ts false it doesnt allow it in the lift 
+result2 = filter(lambda x:x >10, [10, 50, 60, 100, 6, 8 ,30]) #[50,60,100,30]
 print(list(result2))
 
 # Pythonic way 

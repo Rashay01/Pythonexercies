@@ -15,3 +15,8 @@
 from math import pi
 
 print(pi)
+
+x = [3, 5, 6]
+
+#dir(x)
+# x, __ge__ -> dunder methods|dont use|

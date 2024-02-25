@@ -32,3 +32,11 @@ print(f"{person:$^20}:")
 
 caleb = 0.925
 print(f"The test results are out and caleb got {caleb:.2%}")
+
+ans = """
+The current date is: 14-03-2024
+hi   
+  
+"""
+
+print(ans)

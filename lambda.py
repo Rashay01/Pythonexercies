@@ -105,6 +105,10 @@ result1 = map(lambda x: x * 2,[10, 30, 60])
 result2 = filter(lambda x:x >10, [10, 50, 60, 100, 6, 8 ,30]) #[50,60,100,30]
 print(list(result2))
 
+# It always returns copy of the array (same like map)
+# sourceArray.length >= outputArray.length -> True
+# input data type === output data type
+
 # Pythonic way 
 print(sum([10,30,60]))
 

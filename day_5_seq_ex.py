@@ -73,3 +73,9 @@ movie_avg = lambda movie: sum(movie["ratings"]) / len(movie["ratings"])
 movies_avg_sorted = sorted(movies, key=movie_avg, reverse=True)
 names_list = list(map(lambda movie: movie["title"], movies_avg_sorted))
 print(names_list)
+
+#Task5
+movie_avg = lambda movie: sum(movie["ratings"]) / len(movie["ratings"])
+movies_avg_sorted = sorted(movies, key=movie_avg, reverse=True)
+names_list = list(map(lambda movie: movie["title"], movies_avg_sorted))
+print(", ".join(names_list[:3]))

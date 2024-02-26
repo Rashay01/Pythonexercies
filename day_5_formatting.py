@@ -7,6 +7,7 @@ print(f"The current date is: {now:%d-%m-%Y}")
 print(f"The current date is: {now:%d/%m/%Y}")
 print(f"The current date is: {now:%d/%b/%Y}")
 
+# numeic seperators
 salary = 420_000_000
 
 #numbers
@@ -26,6 +27,7 @@ print(f"{name:>20}:")
 print(f"{name:<20}:")
 print(f"{name:^20}:")
 
+#padding
 print(f"{person:*>20}:")
 print(f"{person:#<20}:")
 print(f"{person:$^20}:")

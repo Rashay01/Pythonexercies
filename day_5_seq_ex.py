@@ -1,3 +1,4 @@
+from pprint import pprint
 #Create a list with the average rating of each movie
 #Task 1
 #Using map, filter, all
@@ -78,4 +79,7 @@ print(names_list)
 movie_avg = lambda movie: sum(movie["ratings"]) / len(movie["ratings"])
 movies_avg_sorted = sorted(movies, key=movie_avg, reverse=True)
 names_list = list(map(lambda movie: movie["title"], movies_avg_sorted))
-print(", ".join(names_list[:3]))
+pprint(", ".join(names_list[:3]))
+
+print()
+pprint(movies)

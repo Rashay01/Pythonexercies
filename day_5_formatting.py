@@ -5,7 +5,8 @@ now = datetime.now()
 print(now)
 print(f"The current date is: {now:%d-%m-%Y}")
 print(f"The current date is: {now:%d/%m/%Y}")
-print(f"The current date is: {now:%d/%b/%Y}")
+print(f"The current date is: {now:%d/%b/%Y}") #small shortened month name
+print(f"The current date is: {now:%d/%B/%Y}") #full month name
 
 # numeic seperators
 salary = 420_000_000
@@ -23,7 +24,7 @@ print(f"Pi value is {pi:.3f}")
 #Text formatig
 name = "Lilita"
 person = "Quinlan"
-print(f"{name:>20}:")
+print(f"{name:>20}:") #total length of word and equals  -> padding + word
 print(f"{name:<20}:")
 print(f"{name:^20}:")
 

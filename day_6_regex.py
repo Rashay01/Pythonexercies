@@ -74,3 +74,14 @@ print(hashtags)
 
 # Output
 #['#sunny', '#California', '#travel', '#fun']
+
+
+# Virtual Environment - like a shield creates a copy of current python
+# print() #3.10.8 print(f""abd {abc}")
+# print() #3.14 -> 3 years later  print(f""abd [abc]") # breaking change
+# Create in terminal ->  python -m venv myenv
+# Activate it:  -> navigate to scripts 
+# in powrshell -> .\myenv\Scripts\Activate.ps1
+# Bash -> source myenv/Scripts/activate
+# When activates -> python points -> local copy of python
+# deactivate -> python points -> global copy 

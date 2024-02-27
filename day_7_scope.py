@@ -48,7 +48,7 @@ print(add(10)(5))
 
 
 # Default value copy by refrence
-
+# Singleton -> None
 def fun(nums=[]):
     nums.append(10)
     print(nums)
@@ -59,7 +59,7 @@ fun()
 fun()
 
 def fun(nums = None):
-    if (nums == None):
+    if (nums is None):
         nums =[]
     nums.append(10)
     print(nums)
@@ -68,3 +68,8 @@ fun()
 fun()
 fun()
 fun()
+
+a = [1, 2, 3]
+b = [1, 2, 3]
+print(a is b) # False, checks memory address
+print(a == b) # checks values

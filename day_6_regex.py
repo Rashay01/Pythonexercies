@@ -62,7 +62,7 @@ print(output1)
 
 
 names = ["John   Doe  ", "Jane    Smith", "Alice    Johnson", "  Chris  Evans  "]
-output = [re.sub(r'\s*(\w+)\s+(\w+)\s*',r'\2, \1', name) for name in names]
+output = [re.sub(r'(\w+)\s+(\w+)\s*',r'\2, \1', name) for name in names]
 print(output)
 
 

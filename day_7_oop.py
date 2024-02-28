@@ -92,48 +92,48 @@ print(toyota.horn())
 
 
 # -----------------------------------------Assignment --------------------------
-class Bank:
-    def __init__(self, acc_no, name, balance):
-        self.acc_no = acc_no
-        self.name = name
-        self.balance = balance
-        self.transactions = []
-        self.__create_transaction("deposit", balance)
+# class Bank:
+#     def __init__(self, acc_no, name, balance):
+#         self.acc_no = acc_no
+#         self.name = name
+#         self.balance = balance
+#         self.transactions = []
+#         self.__create_transaction("deposit", balance)
 
-    def display_balance(self):
-        return f"Your balance is: R{self.balance:,}"
+#     def display_balance(self):
+#         return f"Your balance is: R{self.balance:,}"
 
-    def withdraw(self, amount):
-        if self.balance >= amount:
-            self.balance -= amount
-            self.__create_transaction("withdraw", amount)
-            return f"Success. {self.display_balance()}"
-        else:
-            return f"Unsuccess. Insufficent funds."
+#     def withdraw(self, amount):
+#         if self.balance >= amount:
+#             self.balance -= amount
+#             self.__create_transaction("withdraw", amount)
+#             return f"Success. {self.display_balance()}"
+#         else:
+#             return f"Unsuccess. Insufficent funds."
 
-    def deposit(self, amount):
-        self.balance += amount
-        self.__create_transaction("deposit", amount)
-        return f"Success. {self.display_balance()}"
+#     def deposit(self, amount):
+#         self.balance += amount
+#         self.__create_transaction("deposit", amount)
+#         return f"Success. {self.display_balance()}"
 
-    def __create_transaction(self, type, amount):
-        if len(self.transactions) > 0:
-            id = self.transactions[-1].get("id", 0) + 1
-        else:
-            id = 1
-        self.transactions.append(
-            {"id": id, "Date": datetime.now(), "Type": type, "Amount": amount}
-        )
+#     def __create_transaction(self, type, amount):
+#         if len(self.transactions) > 0:
+#             id = self.transactions[-1].get("id", 0) + 1
+#         else:
+#             id = 1
+#         self.transactions.append(
+#             {"id": id, "Date": datetime.now(), "Type": type, "Amount": amount}
+#         )
 
-    def print_transactions(self):
-        statment = f"{'id':>6} {'Date':>5} {'Type':>6} {'Amount':>10}"
-        for i, transaction in enumerate(self.transactions):
-            statment = (
-                statment
-                + f"\n {i}. {transaction['id']:^3} {transaction['Date']:%d %b}"
-                + f" {transaction['Type']:^8} {transaction['Amount']:<7,}"
-            )
-        return statment
+#     def print_transactions(self):
+#         statment = f"{'id':>6} {'Date':>5} {'Type':>6} {'Amount':>10}"
+#         for i, transaction in enumerate(self.transactions):
+#             statment = (
+#                 statment
+#                 + f"\n {i}. {transaction['id']:^3} {transaction['Date']:%d %b}"
+#                 + f" {transaction['Type']:^8} {transaction['Amount']:<7,}"
+#             )
+#         return statment
 
 
 # # gemma, Dhara, caleb - objects/ instances of object bank
@@ -234,35 +234,342 @@ class Bank:
 # print(dhara.display_balance())
 # print(caleb.display_balance())
 
+# --------------------------------Private variables------------
+# class Bank3:
+#     intrest_rate = 0.2
+
+#     def __init__(self, acc_no, name, balance):
+#         self.acc_no = acc_no
+#         self.name = name
+#         # private variable
+#         self.__balance = balance
+
+#     def display_balance(self):
+#         return f"Your balance is: R{self.__balance:,.2f}"
+
+#     def withdraw(self, amount):
+#         if self.__balance >= amount:
+#             self.__balance -= amount
+#             return f"Success. {self.display_balance()}"
+#         else:
+#             return f"Insufficent funds"
+
+#     def deposit(self, amount):
+#         self.__balance += amount
+#         return f"Success. {self.display_balance()}"
+
+#     def apply_intrest_rate(self):
+#         self.__balance *= 1 + Bank.intrest_rate
+#         # print(self.display_balance())
+
+
+# gemma = Bank3(123, "Gemma Porrill", 15_000)
+# dhara = Bank3(124, "Dhara Kara", 50_001)
+# caleb = Bank3(125, "Caleb Potts", 100_000)
+
+# print(gemma.name)  # public
+# # print(gemma.__balance)#can not private
+
+
+# -----------------------------Class variables and methods---------------
+# class Bank:
+#     intrest_rate = 0.2
+#     no_accounts = 0
+
+#     def __init__(self, acc_no, name, balance):
+#         self.acc_no = acc_no
+#         self.name = name
+#         # private variable
+#         self.__balance = balance
+#         Bank.no_accounts += 1
+
+#     # staticmethod ---> no cls, self | normal function
+#     @staticmethod  # normal function
+#     def get_tatal_no_total_account():
+#         return f"In total we have {Bank.no_accounts} accounts"
+
+#     # common method across instance
+#     @classmethod  # cls -> cllass
+#     def update_intrest_rate(cls, rate):
+#         cls.intrest_rate = rate
+
+#     def display_balance(self):
+#         return f"Your balance is: R{self.__balance:,.2f}"
+
+#     def withdraw(self, amount):
+#         if self.__balance >= amount:
+#             self.__balance -= amount
+#             return f"Success. {self.display_balance()}"
+#         else:
+#             return f"Insufficent funds"
+
+#     def deposit(self, amount):
+#         self.__balance += amount
+#         return f"Success. {self.display_balance()}"
+
+#     def apply_intrest_rate(self):
+#         self.__balance *= 1 + Bank.intrest_rate
+
+
+# gemma = Bank(123, "Gemma Porrill", 15_000)
+# dhara = Bank(124, "Dhara Kara", 50_001)
+# caleb = Bank(125, "Caleb Potts", 100_000)
+# alex = Bank(125, "Alex Lazarus", 100)
+
+# Bank.update_intrest_rate(0.1)
+
+# # Apply intrest
+# alex.apply_intrest_rate()
+# print(alex.display_balance())
+
+
+# # Task
+# print(Bank.get_tatal_no_total_account())
+
+
+# Execise
+# class Circle:
+#     pi = 3.14159  # Class variable
+
+#     def __init__(self, radius):
+#         self.radius = radius
+
+#     @classmethod
+#     def from_diameter(diameter):
+#         return Circle(diameter / 2)
+
+#     @staticmethod
+#     def perimeter(radius):
+#         return 2 * Circle.pi * radius
+
+#     def calculate_area(self):
+#         return f"The area is: {Circle.pi * (self.radius**2):.2f}"
+
+
+# class Circle:
+#     pi = 3.14159  # Class variable
+
+#     def __init__(self, radius):
+#         self.radius = radius
+
+#     @classmethod
+#     def from_diameter(cls, diameter):
+#         return cls(diameter / 2)
+
+#     @staticmethod
+#     def perimeter(radius):
+#         return 2 * Circle.pi * radius
+
+#     @staticmethod
+#     def area(radius):
+#         return Circle.pi * radius**2
+
+#     def calculate_area(self):
+#         return f"The circle area is: {Circle.area(self.radius):.2f}"
+
+
+# circle1 = Circle(2)
+
+# # Task 1
+# print(Circle.perimeter(10))
+
+# # Task 2
+# print(circle1.calculate_area())
+# circle_from_dia = Circle.from_diameter(20)
+# print(circle_from_dia.calculate_area())
+
+
+# # Inheritence Animal (base) --> Dog (child)
+
+
+# class Animal:
+#     def __init__(self, name):
+#         self.name = name
+
+#     def speak(self):
+#         return "some sound"
+
+
+# class Dog(Animal):
+#     def __init__(self, name, speed):
+#         super().__init__(name)
+#         self.speed = speed
+
+#     # polymorphism | overinding methods
+#     def speak(self):
+#         return "woof !!"
+
+#     # methods are attributes
+#     def run(self):
+#         return "🐶 wags tail !!"
+
+#     def speed_bonus(self):
+#         return f"Running at {self.speed * 2} km/h"
+
+
+# toby = Animal("toby")
+# maxy = Dog("maxy", 20)
+# print(toby.speak())
+# print(maxy.speak())
+# print(maxy.name)
+# print(maxy.run())
+# # print(toby.run()) # attribute error
+# print(maxy.speed_bonus())
+
+# ============================================================================================
+
+
+# create 2 more classes from the bank
+# Savings account - more intrest rate = 0.05
+# CheckingAccount - withdraw R1
+# class Bank:
+#     intrest_rate = 0.2
+#     no_accounts = 0
+
+#     def __init__(self, acc_no, name, balance):
+#         self.acc_no = acc_no
+#         self.name = name
+#         # private variable
+#         self.__balance = balance
+#         Bank.no_accounts += 1
+
+#     # staticmethod ---> no cls, self | normal function
+#     @staticmethod  # normal function
+#     def get_tatal_no_total_account():
+#         return f"In total we have {Bank.no_accounts} accounts"
+
+#     # common method across instance
+#     @classmethod  # cls -> cllass
+#     def update_intrest_rate(cls, rate):
+#         cls.intrest_rate = rate
+
+#     def display_balance(self):
+#         return f"Your balance is: R{self.__balance:,.2f}"
+
+#     def withdraw(self, amount):
+#         if self.__balance >= amount:
+#             self.__balance -= amount
+#             return f"Success. {self.display_balance()}"
+#         else:
+#             return f"Insufficent funds"
+
+#     def deposit(self, amount):
+#         self.__balance += amount
+#         return f"Success. {self.display_balance()}"
+
+#     def apply_intrest_rate(self):
+#         self.__balance *= 1 + self.intrest_rate
+
+
+# class SavingsAccount(Bank):
+#     intrest_rate = 0.05
+
+
+# class CheckingAccount(Bank):
+#     withdrawl_fee = 1
+
+#     # overriding
+#     def withdraw(self, amount):
+#         return super().withdraw(amount + CheckingAccount.withdrawl_fee)
+
+
+# # SavingsAccount -  interest_rate = 0.05
+
+# # Task 1
+# gemma = SavingsAccount(123, "Gemma Porrill", 1_000)
+# gemma.apply_intrest_rate()
+# print(gemma.display_balance())  # 1_050
+# gemma.display_balance()
+
+# # Task 2
+# # CheckingAccount - withdraw  R1
+# alex = CheckingAccount(126, "Alex Lazarus", 100)
+# print(alex.withdraw(50))
+# alex(50)
+#  49
+
+# --------------------------------------------------------------------------------
+# Magic methods __repr__, __str__
+
 
 class Bank:
     intrest_rate = 0.2
+    no_accounts = 0
 
     def __init__(self, acc_no, name, balance):
         self.acc_no = acc_no
         self.name = name
-        # private variable
-        self.__balance = balance
+        # protected variable
+        self._balance = balance
+        Bank.no_accounts += 1
+
+    # staticmethod ---> no cls, self | normal function
+    @staticmethod  # normal function
+    def get_tatal_no_total_account():
+        return f"In total we have {Bank.no_accounts} accounts"
+
+    # common method across instance
+    @classmethod  # cls -> cllass
+    def update_intrest_rate(cls, rate):
+        cls.intrest_rate = rate
 
     def display_balance(self):
-        return f"Your balance is: R{self.__balance:,.2f}"
+        return f"Your balance is: R{self._balance:,.2f}"
 
     def withdraw(self, amount):
-        if self.__balance >= amount:
-            self.__balance -= amount
+        if self._balance >= amount:
+            self._balance -= amount
             return f"Success. {self.display_balance()}"
         else:
             return f"Insufficent funds"
 
     def deposit(self, amount):
-        self.__balance += amount
+        self._balance += amount
         return f"Success. {self.display_balance()}"
 
     def apply_intrest_rate(self):
-        self.__balance *= 1 + Bank.intrest_rate
-        # print(self.display_balance())
+        self._balance *= 1 + self.intrest_rate
 
 
-gemma = Bank(123, "Gemma Porrill", 15_000)
-dhara = Bank(124, "Dhara Kara", 50_001)
-caleb = Bank(125, "Caleb Potts", 100_000)
+class SavingsAccount(Bank):
+    intrest_rate = 0.05
+
+
+class CheckingAccount(Bank):
+    withdrawl_fee = 1
+
+    # overriding
+    def withdraw(self, amount):
+        """This is for withdraw with a transaction fee"""
+        return super().withdraw(amount + CheckingAccount.withdrawl_fee)
+
+    def __str__(self):
+        """Human readable output"""
+        return f"This account belongs to {self.name} and has a balance of R{self._balance:,}"
+
+    def __repr__(self):
+        """DX: string --> class"""
+        return f"CheckingAccount({self.acc_no}, '{self.name}', {self._balance})"
+
+    def __add__(self, other):
+        return self._balance + other._balance
+
+
+gemma = SavingsAccount(123, "Gemma Porrill", 1_000)
+gemma.apply_intrest_rate()
+print(gemma.display_balance())  # 1_050
+gemma.display_balance()
+
+
+alex = CheckingAccount(126, "Alex Lazarus", 100)
+caleb = CheckingAccount(126, "Caleb Potts", 100_000)
+print(alex.withdraw(50))
+
+print(alex)
+print(caleb)
+# alex.__str__
+print(alex.__repr__())
+print(repr(alex))  # better method
+
+# print(alex + caleb) #Unsported so can not add
+print(alex + caleb)

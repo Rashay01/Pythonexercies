@@ -1,4 +1,4 @@
-# Vs code shortcut crt + shift + p -> command
+# Vs code shortcut crt + shift + p -> command pallet
 # ctrl + p -> find file
 
 # Lexical scope

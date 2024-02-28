@@ -91,31 +91,32 @@ print(toyota.horn())
 # PEP 8 - Python Enchancements proposals
 
 
+# -----------------------------------------Assignment --------------------------
 class Bank:
     def __init__(self, acc_no, name, balance):
         self.acc_no = acc_no
         self.name = name
         self.balance = balance
         self.transactions = []
-        self.create_transaction("deposit", balance)
+        self.__create_transaction("deposit", balance)
 
     def display_balance(self):
         return f"Your balance is: R{self.balance:,}"
 
     def withdraw(self, amount):
-        if self.balance > amount:
+        if self.balance >= amount:
             self.balance -= amount
-            self.create_transaction("withdraw", amount)
-            return f"Success. Your Balance is: R{self.balance:,}"
+            self.__create_transaction("withdraw", amount)
+            return f"Success. {self.display_balance()}"
         else:
-            return f"Unsuccess. Your Balance is: R{self.balance:,}"
+            return f"Unsuccess. Insufficent funds."
 
     def deposit(self, amount):
         self.balance += amount
-        self.create_transaction("deposit", amount)
-        return f"Success. Your Balance is: R{self.balance:,}"
+        self.__create_transaction("deposit", amount)
+        return f"Success. {self.display_balance()}"
 
-    def create_transaction(self, type, amount):
+    def __create_transaction(self, type, amount):
         if len(self.transactions) > 0:
             id = self.transactions[-1].get("id", 0) + 1
         else:
@@ -135,50 +136,133 @@ class Bank:
         return statment
 
 
+# # gemma, Dhara, caleb - objects/ instances of object bank
+# gemma = Bank(123, "Gemma Porrill", 15_000)
+# dhara = Bank(124, "Dhara Kara", 50_001)
+# caleb = Bank(125, "Caleb Potts", 100_000)
+
+# # Task 2
+
+# # gemma.display_balance() --> Your balance is: R15,000
+# print(gemma.display_balance())
+# print(dhara.display_balance())
+# print(caleb.display_balance())
+
+
+# # Task 3
+# # caleb.withdraw(2000)
+
+# print(caleb.withdraw(2_000))
+# print(caleb.display_balance())
+
+# # Task 4
+# # dhara.deposit(10_000) --> Success. Your Balance is: R60,001
+# print(dhara.deposit(10_000))
+
+
+# # Assignment - Transactions Tomorrow
+# # #  id   Date       Type     Amount
+# # 1.  1  29 Feb   withdraw       2000
+# # 2.  2  1 Mar    deposit        6000
+# # 3.  3  3 Mar    deposit        7000
+
+# print(caleb.print_transactions())
+
+
+# caleb1 = Bank(125, "Caleb Potts", 100_000)
+# print("withdraw R2,000")
+# print(caleb1.withdraw(2_000))
+
+# print("deposit R4,000")
+# print(caleb1.deposit(4_000))
+
+# print("deposit R10,000")
+# print(caleb1.deposit(10_000))
+
+# print("withdraw R6,000")
+# print(caleb1.withdraw(6_000))
+
+# print()
+# print(caleb1.print_transactions())
+
+
+# -----------------------------------------------------------------------------------------
+# crtl + , --> settings
+
+
+# Enscapsulation  | putting all together in one container | giving acccess
+# Calss Variables
+# class Bank2:
+#     intrest_rate = 0.2
+
+#     def __init__(self, acc_no, name, balance):
+#         self.acc_no = acc_no
+#         self.name = name
+#         # private variable
+#         self.__balance = balance
+
+#     def display_balance(self):
+#         return f"Your balance is: R{self.__balance:,.2f}"
+
+#     def withdraw(self, amount):
+#         if self.__balance >= amount:
+#             self.__balance -= amount
+#             return f"Success. {self.display_balance()}"
+#         else:
+#             return f"Insufficent funds"
+
+#     def deposit(self, amount):
+#         self.__balance += amount
+#         return f"Success. {self.display_balance()}"
+
+#     def apply_intrest_rate(self):
+#         self.__balance *= (1 + Bank.intrest_rate)
+#         # print(self.display_balance())
+
+
+# gemma = Bank2(123, "Gemma Porrill", 15_000)
+# dhara = Bank2(124, "Dhara Kara", 50_001)
+# caleb = Bank2(125, "Caleb Potts", 100_000)
+
+# # after 1 year
+
+# gemma.apply_intrest_rate()
+# dhara.apply_intrest_rate()
+# caleb.apply_intrest_rate()
+
+# print(gemma.display_balance())
+# print(dhara.display_balance())
+# print(caleb.display_balance())
+
+
+class Bank:
+    intrest_rate = 0.2
+
+    def __init__(self, acc_no, name, balance):
+        self.acc_no = acc_no
+        self.name = name
+        # private variable
+        self.__balance = balance
+
+    def display_balance(self):
+        return f"Your balance is: R{self.__balance:,.2f}"
+
+    def withdraw(self, amount):
+        if self.__balance >= amount:
+            self.__balance -= amount
+            return f"Success. {self.display_balance()}"
+        else:
+            return f"Insufficent funds"
+
+    def deposit(self, amount):
+        self.__balance += amount
+        return f"Success. {self.display_balance()}"
+
+    def apply_intrest_rate(self):
+        self.__balance *= 1 + Bank.intrest_rate
+        # print(self.display_balance())
+
+
 gemma = Bank(123, "Gemma Porrill", 15_000)
 dhara = Bank(124, "Dhara Kara", 50_001)
 caleb = Bank(125, "Caleb Potts", 100_000)
-
-# Task 2
-
-# gemma.display_balance() --> Your balance is: R15,000
-print(gemma.display_balance())
-print(dhara.display_balance())
-print(caleb.display_balance())
-
-
-# Task 3
-# caleb.withdraw(2000)
-
-print(caleb.withdraw(2_000))
-print(caleb.display_balance())
-
-# Task 4
-# dhara.deposit(10_000) --> Success. Your Balance is: R60,001
-print(dhara.deposit(10_000))
-
-
-# Assignment - Transactions Tomorrow
-# #  id   Date       Type     Amount
-# 1.  1  29 Feb   withdraw       2000
-# 2.  2  1 Mar    deposit        6000
-# 3.  3  3 Mar    deposit        7000
-
-print(caleb.print_transactions())
-
-
-caleb1 = Bank(125, "Caleb Potts", 100_000)
-print("withdraw R2,000")
-print(caleb1.withdraw(2_000))
-
-print("deposit R4,000")
-print(caleb1.deposit(4_000))
-
-print("deposit R10,000")
-print(caleb1.deposit(10_000))
-
-print("withdraw R6,000")
-print(caleb1.withdraw(6_000))
-
-print()
-print(caleb1.print_transactions())

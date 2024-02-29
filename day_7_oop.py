@@ -552,6 +552,7 @@ class CheckingAccount(Bank):
         return f"CheckingAccount({self.acc_no}, '{self.name}', {self._balance})"
 
     def __add__(self, other):
+        """How the operator will work"""
         return self._balance + other._balance
 
 
@@ -568,7 +569,7 @@ print(alex.withdraw(50))
 print(alex)
 print(caleb)
 # alex.__str__
-print(alex.__repr__())
+print(alex.__repr__())  # Thing to reconsstruct the instance
 print(repr(alex))  # better method
 
 # print(alex + caleb) #Unsported so can not add

@@ -1,5 +1,5 @@
 # Iterables? __iter__ | Loop it many times  Which can be looped: List
-# Doesnt know where I am in the loop | losts of memory
+# Doesnt know where I am in the loop | losts of memory | eager
 # Iterator? __next__ | Loops it one time
 # They know where we are in the loop | memory saver |lazy
 

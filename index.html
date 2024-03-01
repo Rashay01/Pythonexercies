@@ -9,6 +9,12 @@
     <!-- Adapt to phone -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>This cool</title>
+    <!-- internal - | one round trip | performance -->
+    <!-- max 200 lines -->
+    <!-- external css: -->
+    <!-- separation of concern, Resuse -->
+    <link rel="stylesheet" href="style.css"/>
+    <link rel="stylesheet" href="navigation.css"/>
     <style>
         ul {
             color: crimson;
@@ -28,10 +34,22 @@
             text-align: center;
             text-transform: uppercase;
         }
+        h1{
+            letter-spacing: 10px;
+        }
+        /* breath space | size small then LH more */
+        h2 {
+            line-height: 0.2;
+        }
     </style>
 </head>
 <!-- tags/ elements-->
 <body>
+    <ul class="navigation">
+        <li><a href="/" >Home</a></li>
+        <li><a href="/selector.html" >Selector</a></li>
+        <li><a href="https://www.google.com" >Google</a></li>
+    </ul>
     <!-- heading -->
     <h1>Hello, Hacked 🚀😁🤩</h1>
     <h2>Hello, Hacked 🚀😁🤩</h2>
@@ -41,6 +59,8 @@
     <h6>Hello, Hacked 🚀😁🤩</h6>
 
     <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+    
+
     <h2>Hobbies</h2>
     <!-- 2 ways to list -->
     <!-- unordered item -->
@@ -53,7 +73,7 @@
         <li>Series</li>
     </ul>
     <!-- orderd list -->
-    <ol>
+    <ol style="color: orange;">
         <li>Gaming</li>
         <li>Running</li>
         <li>Movies</li>

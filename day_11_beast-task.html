@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .movie-container{
+            text-align: center;
+            max-width: 370px;
+
+            font-family: "Roboto", sans-serif;
+        }
+        .movie-poster {
+            height: 450px;
+            width: 370px;
+            object-fit: cover;
+            border-radius: 25px;
+        }
+        .movie-content{
+            padding: 0px 16px;
+        }
+        .movie-summary{
+            line-height: 1.3;
+        }
+        .movie-name{
+            font-size: 32px;
+            margin-top: 1px;
+            color: hsl(0, 0%, 100%);
+        }
+        .movie-spec{
+            color: hsl(2, 17%, 59%)
+        }
+        .separator, .movie-summary{
+            color: #ffe5e4
+        }
+        .highlight{
+            font-style: italic;
+            font-weight: bold;
+        }
+        body {
+        margin: 0;
+        display: grid;
+        place-content: center;
+        min-height: 100vh;
+        /* background-color: hsl(2, 88%, 7%); */
+        /* background-image: linear-gradient(to right top, #f8c373, #cfa567, #a6875c, #806b50, #5a5044);
+        background-image: linear-gradient(to right, #f8c373, #cfa567, #a6875c, #806b50, #5a5044);
+        background-image: linear-gradient(to right, #220302, #441f1a, #6a3b2a, #8f5b37, #b07f45); */
+        background-image: linear-gradient(20deg, #180101, #371c19, #5b3327, #7e4e33, #9e6c3d);
+        /* 6E3E18 */
+    }
+    </style>
+</head>
+<body>
+    <div class="movie-container">
+        <img
+            class="movie-poster"
+            src="https://www.mixindia.com/wp-content/uploads/2022/01/Beast-Tamil-Movie-Poster-1.jpg"
+        />
+        <div class="movie-content">
+            <h2 class="movie-name">Beast</h2>
+            <p class="movie-spec">
+                2022 <span class="separator">•</span> Action/Dark comedy <span class="separator">•</span> 2h 38m
+            </p>
+            <p class="movie-summary">
+                Beast is an upcoming Indian Tamil-language action thriller film written and directed by Nelson and produced by Sun Pictures. 
+                <span class="highlight">The film stars Vijay and Pooja Hegde</span>, while Selvaraghvan, Yogi Babu and Rein Kingsley plays supporting roles. 
+            </p>
+        </div>
+    </div>
+    
+</body>
+</html>

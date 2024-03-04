@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        body {
+        margin: 0;
+        display: grid;
+        place-content: center;
+        min-height: 100vh;
+        }
+        .box {
+            background: plum;
+            height: 400px;
+            width: 400px;  
+            transition: 2s all;
+            cursor: pointer; 
+        }
+        /* psuedo class:hover :active - fake class */
+        /* mouse over */
+        .box:hover{
+            background: crimson;
+            transform: scale(1.1) ;
+        }
+        /* mouse click */
+        .box:active{
+            background:  teal;
+            transform: scale(0.9) rotate(360deg);
+            border-radius: 50%;
+            
+        }
+        .thumbs{
+            font-size: large;
+            transition: 0.2s all ease-in-out;
+            cursor: pointer;
+            /* border: 2px solid purple;
+            border-radius: 50%;  */
+            font-size: 32px;
+        }
+        .thumbs:hover{
+            transform:  scale(1.3) translateY(-10px) ;
+            color: red;
+        }
+        .thumbs:active{
+            transform:  scale(2);
+        }
+    </style>
+</head>
+<body>
+    <!-- <div class="box">
+        
+    </div> -->
+    <!-- task -->
+    <!-- 👍 grow and move up -->
+
+    <!-- <p class="thumbs"> 👍</p> -->
+    <!-- Draw Back  emojies not same and evry device looks diffrent on evry platforms-->
+
+    <p class="thumbs"> <i class="fa-solid fa-heart"></i></i></p>
+    
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            margin: 0;
+            display: grid;
+            place-content: center;
+            min-height: 100vh;
+        }
+        .box{
+            background-color: skyblue;
+            border-radius: 10px;
+            border-left: 8px solid hsl(197, 71%, 50%);
+            padding: 16px;
+            max-width: 430px
+        
+        }
+        .innerbox{
+            /* padding-top: 10px;
+            padding-bottom: 15px;
+            padding-left : 10px; */
+            font-family: sans-serif;
+        }
+        p{
+            font-weight: 500;
+            font-size: small;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="innerbox">
+            <h4>Intended Audience</h4>
+            <p>This tutorial assumes that you alredy have a static React site (Gatsby/Next) being deployed on vercel or netlify</p>
+            <p>It's written with intermediate React developer in mind; if you're newer to <br> the modern JS ecosystem, it might be a bit hard to follw</p>
+        </div>
+    </div>
+</body>
+</html>

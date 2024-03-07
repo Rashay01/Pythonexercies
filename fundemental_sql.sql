@@ -105,3 +105,53 @@ SELECT distinct Building_name
 FROM Buildings 
 left join Employees on Building_name = Building
 where Building is null
+
+-- #9
+SELECT title, (domestic_sales + international_sales) / 1000000 AS total_sales
+FROM movies 
+inner JOIN boxoffice ON id = movie_id;
+
+SELECT title, Rating*10 AS rating_percentage
+FROM movies 
+inner JOIN boxoffice ON id = movie_id;
+
+SELECT title
+FROM movies
+WHERE year % 2 = 0;
+
+-- #10
+SELECT Max(Years_employed) AS Max_Years_employed FROM employees;
+
+SELECT role, AVG(Years_employed) as Avg_years_employed 
+FROM employees
+group by role;
+
+SELECT building, SUM(Years_employed) as Total_years_employed 
+FROM employees
+group by building;
+
+-- #11
+SELECT role, COUNT(*) as Number_of_artists
+FROM employees
+WHERE role = "Artist";
+
+SELECT role, COUNT(*) as Number_of_emloyees
+FROM employees
+group by role;
+
+
+SELECT role, SUM(Years_employed) as Total_years_emloyed
+FROM employees
+group by role
+having role = "Engineer";
+
+-- #12
+
+SELECT director, count(director) as num_movies
+FROM movies
+group by director;
+
+SELECT director, sum(Domestic_sales + International_sales) as total_sales
+FROM movies
+inner join Boxoffice on id=Movie_id
+group by director;

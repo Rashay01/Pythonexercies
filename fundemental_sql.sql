@@ -208,6 +208,16 @@ WHERE Director = "Andrew Stanton";
 DELETE from Movies
 WHERE Director = "Andrew Stanton";
 
+-- DDL Commands (Data Definition Language) 
+
+
+-- INTEGER, BOOLEAN
+-- FLOAT, DOUBLE, REAL
+-- CHARACTER(num_of_chars), VARCHAR(num_of_chars) -> under 120 words, TEXT
+-- DATE, DATETIME
+-- BLOB -> Binary data
+-- Below are table schema 
+
 -- 16
 CREATE TABLE Database (
     Name TEXT,

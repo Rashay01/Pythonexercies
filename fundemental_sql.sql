@@ -179,7 +179,35 @@ group by director;
 -- #13
 INSERT INTO movies VALUES (15,"Toy Story 4", "John Lasseter", 2024, 90);
 
-INSERT INTO boxoffice VALUES (15,8.7,  340000000, 270000000);
+INSERT INTO boxoffice VALUES (15, 8.7, 340000000, 270000000);
+-- or
+INSERT INTO boxoffice (movie_id, rating, domestic_sales, international_sales)
+VALUES (15, 8.7, 340000000, 270000000);
 
 
 -- #14
+UPDATE Movies
+SET Director = "John Lasseter"
+WHERE Title = "A Bug's Life"
+
+UPDATE Movies
+SET Year = 1999
+WHERE Title = "Toy Story 2"
+
+UPDATE Movies
+SET Title = "Toy Story 3", Director = "Lee Unkrich"
+WHERE Title = "Toy Story 8"
+
+-- #15
+DELETE from Movies
+WHERE Year < 2005
+
+DELETE from Movies
+WHERE Director = "Andrew Stanton"
+
+-- 16
+CREATE TABLE Database (
+    Name TEXT,
+    Version FLOAT,
+    Download_count INTEGER
+);

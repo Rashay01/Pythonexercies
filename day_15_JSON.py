@@ -16,6 +16,9 @@ print(data_json, type(data_json))  # Strig
 # print(data_json["employees"]) # Type error
 
 # JSON - JavaScript Object Notaion
+# 1. Universal Languague
+# 2. loose Coupling - if you change yor backed the forntend will not care
+# 3. Platform independent - dont need to chnage server based on platform
 
 # First-Class Function --> Function being treated as a value
 sport = {"name": "Dhoni", "dbl": lambda x: x * 2}  # valid Dictionary
@@ -91,3 +94,42 @@ output1 = json.dumps(
 )
 
 print(output1)
+
+# loose coupling - as long as you send json its fine
+# tight coupling - you need to rewrie every thing - use to send HTML files everytime
+
+# micro serveice architecture - mixture of multiple backends
+# https://www.youtube.com/watch?v=CZ3wIuvmHeM&ab_channel=InfoQ
+
+
+# write a file
+with open("bank_accounts.json", "w") as file:
+    json.dump(output1, file, indent=4)
+
+# read a file
+with open("bank_accounts.json", "r") as file:
+    data = json.load(output1, file, indent=4)
+    print(data, type(data))
+
+
+# create post summary.json  return amount of comments
+
+# {
+#   "posts_summary": [
+#     {
+#       "title": "The Future of AI",
+#       "author": "Alice",
+#       "number_of_comments": 3
+#     },
+#     {
+#       "title": "Learning Python",
+#       "author": "Bob",
+#       "number_of_comments": 1
+#     },
+#     {
+#       "title": "Web Development Trends",
+#       "author": "Charlie",
+#       "number_of_comments": 0
+#     }
+#   ]
+# }

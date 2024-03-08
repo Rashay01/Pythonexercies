@@ -1,3 +1,4 @@
+-- https://sqlbolt.com/lesson/introduction
 SELECT * FROM movies
 where id = 6;
 
@@ -94,8 +95,8 @@ FROM buildings
 LEFT JOIN employees ON building_name = building;
 
 -- #8
-SELECT * FROM employees
-where Years_employed =0
+SELECT name, role FROM employees
+where Building is null;
 
 SELECT * FROM employees
 left join Buildings on employees.building = buildings.Building_name
@@ -111,22 +112,26 @@ SELECT title, (domestic_sales + international_sales) / 1000000 AS total_sales
 FROM movies 
 inner JOIN boxoffice ON id = movie_id;
 
+SELECT title, ROUND((domestic_sales + international_sales) / 1000000,2) AS total_million_sales
+FROM movies 
+inner join boxoffice on id = movie_id;
+
 SELECT title, Rating*10 AS rating_percentage
 FROM movies 
-inner JOIN boxoffice ON id = movie_id;
+inner join boxoffice on id = movie_id;
 
-SELECT title
+SELECT *
 FROM movies
 WHERE year % 2 = 0;
 
 -- #10
-SELECT Max(Years_employed) AS Max_Years_employed FROM employees;
+SELECT Max(Years_employed) AS Max_Years_Employed FROM employees;
 
 SELECT role, AVG(Years_employed) as Avg_years_employed 
 FROM employees
 group by role;
 
-SELECT building, SUM(Years_employed) as Total_years_employed 
+SELECT building, SUM(Years_employed) as Total_Years_Employed 
 FROM employees
 group by building;
 
@@ -139,12 +144,26 @@ SELECT role, COUNT(*) as Number_of_emloyees
 FROM employees
 group by role;
 
-
+SELECT role, SUM(Years_employed) as Total_years_emloyed
+FROM employees
+where role = "Engineer"
+-- or
 SELECT role, SUM(Years_employed) as Total_years_emloyed
 FROM employees
 group by role
 having role = "Engineer";
 
+-- Notes 
+-- SELECT DISTINCT column, AGG_FUNC(column_or_expression), …
+-- FROM mytable
+--     JOIN another_table
+--       ON mytable.column = another_table.column
+--     WHERE constraint_expression
+--     GROUP BY column
+--     HAVING constraint_expression
+--     ORDER BY column ASC/DESC
+--     LIMIT count OFFSET COUNT;
+-- 
 -- #12
 
 SELECT director, count(director) as num_movies
@@ -155,3 +174,12 @@ SELECT director, sum(Domestic_sales + International_sales) as total_sales
 FROM movies
 inner join Boxoffice on id=Movie_id
 group by director;
+
+
+-- #13
+INSERT INTO movies VALUES (15,"Toy Story 4", "John Lasseter", 2024, 90);
+
+INSERT INTO boxoffice VALUES (15,8.7,  340000000, 270000000);
+
+
+-- #14

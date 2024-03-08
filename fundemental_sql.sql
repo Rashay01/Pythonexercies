@@ -202,8 +202,11 @@ WHERE Title = "Toy Story 8"
 DELETE from Movies
 WHERE Year < 2005
 
+SELECT * FROM movies 
+WHERE Director = "Andrew Stanton";
+
 DELETE from Movies
-WHERE Director = "Andrew Stanton"
+WHERE Director = "Andrew Stanton";
 
 -- 16
 CREATE TABLE Database (
@@ -211,3 +214,23 @@ CREATE TABLE Database (
     Version FLOAT,
     Download_count INTEGER
 );
+
+CREATE TABLE IF NOT EXISTS Database (
+    Name TEXT,
+    Version FLOAT,
+    Download_count INTEGER
+);
+
+-- 17 
+
+ALTER TABLE Movies
+ADD Aspect_ratio FLOAT
+
+ALTER TABLE Movies
+ADD Language TEXT 
+DEFAULT "English"
+
+-- 18
+DROP TABLE IF EXISTS Movies;
+
+DROP TABLE IF EXISTS Boxoffice;

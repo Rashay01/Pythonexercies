@@ -108,7 +108,7 @@ with open("bank_accounts.json", "w") as file:
 
 # read a file
 with open("bank_accounts.json", "r") as file:
-    data = json.load(output1, file, indent=4)
+    data = json.load(file)
     print(data, type(data))
 
 
@@ -133,3 +133,20 @@ with open("bank_accounts.json", "r") as file:
 #     }
 #   ]
 # }
+
+ans = None
+
+with open("blog_post.json", "r") as file:
+    ans = json.load(file)
+
+output3 = [
+    {
+        "title": post["title"],
+        "author": post["author"],
+        "number_of_comments": len(post["comments"]),
+    }
+    for post in ans["posts"]
+]
+
+with open("post_summary.json", "w") as file:
+    json.dump(output3, file, indent=4)

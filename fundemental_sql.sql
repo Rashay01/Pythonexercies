@@ -208,8 +208,11 @@ WHERE Director = "Andrew Stanton";
 DELETE from Movies
 WHERE Director = "Andrew Stanton";
 
+-- DML - INSERT, UPDATE, DELETE - ALTERs  
 -- DDL Commands (Data Definition Language) 
+-- ALter the table
 
+-- Alter the tables's schema
 
 -- INTEGER, BOOLEAN
 -- FLOAT, DOUBLE, REAL

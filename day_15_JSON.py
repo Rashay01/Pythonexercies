@@ -17,7 +17,7 @@ print(data_json, type(data_json))  # Strig
 
 # JSON - JavaScript Object Notaion
 # 1. Universal Languague
-# 2. loose Coupling - if you change yor backed the forntend will not care
+# 2. loose Coupling - if you change yor backed the forntend will not care - front end and backend it is independent
 # 3. Platform independent - dont need to chnage server based on platform
 
 # First-Class Function --> Function being treated as a value
@@ -99,6 +99,7 @@ print(output1)
 # tight coupling - you need to rewrie every thing - use to send HTML files everytime
 
 # micro serveice architecture - mixture of multiple backends
+# monolith architechture - single architecture
 # https://www.youtube.com/watch?v=CZ3wIuvmHeM&ab_channel=InfoQ
 
 

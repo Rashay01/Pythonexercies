@@ -69,7 +69,7 @@ async def hello_word():
 # Event loop pushes to stackk when the call stack is empty
 #
 
-
+# Aync without even loop
 # async def background_task():
 #     print("Start background task")
 #     await asyncio.sleep(3)
@@ -84,28 +84,132 @@ async def hello_word():
 # asyncio.run(main())
 
 
+# Async with event loop
+# async def cooking_eggs():
+#     print("egss cooking")
+#     await asyncio.sleep(3)
+#     print("Eggs cooked")
+
+
+# async def make_coffee():
+#     print("coffee brewing")
+#     await asyncio.sleep(2)
+#     print("coffe done")
+
+
+# Old method
+# async def main():
+#     # Request to event loop to schedule
+#     task1 = asyncio.create_task(cooking_eggs())  # con-currently
+#     task2 = asyncio.create_task(make_coffee())
+#     # Waiting for the background task
+#     print("Bread toast 1")
+#     print("Bread toast 2")
+#     print("Bread toast 3")
+
+#     await asyncio.wait({task1, task2})
+
+
+# asyncio.run(main())
+
+
+# async def main():
+#     # Request to event loop to schedule
+#     task1 = asyncio.create_task(cooking_eggs())  # con-currently
+#     task2 = asyncio.create_task(make_coffee())
+#     # Waiting for the background task
+#     print("Bread toast 1")
+#     print("Bread toast 2")
+#     print("Bread toast 3")
+
+#     await asyncio.gather(task1, task2)
+
+
+# asyncio.run(main())
+
+
+# async def cooking_eggs():
+#     print("egss cooking")
+#     await asyncio.sleep(3)
+#     print("Eggs cooked")
+#     return f"Data - Eggs"
+
+
+# async def make_coffee():
+#     print("coffee brewing")
+#     await asyncio.sleep(2)
+#     print("coffe done")
+#     return f"Data - coffee"
+
+
+# async def make_cereal():
+#     print("Making cereal bowl")
+#     await asyncio.sleep(4)
+#     print("Cereal done")
+#     return f"Data - cereal"
+
+
+# async def main():
+#     # Request to event loop to schedule
+
+#     all_tasks = [
+#         asyncio.create_task(cooking_eggs()),
+#         asyncio.create_task(make_coffee()),
+#         asyncio.create_task(make_cereal()),
+#     ]
+#     # Waiting for the background task
+#     print("Bread toast 1")
+#     print("Bread toast 2")
+#     print("Bread toast 3")
+
+#     # await asyncio.gather(all_tasks[0], all_tasks[1],all_tasks[2])
+#     # Order given in create task will be order of data
+#     data = await asyncio.gather(*all_tasks)
+#     print(data)
+
+
+# asyncio.run(main())
+
+
 async def cooking_eggs():
     print("egss cooking")
     await asyncio.sleep(3)
     print("Eggs cooked")
+    return f"Data - Eggs"
 
 
 async def make_coffee():
     print("coffee brewing")
     await asyncio.sleep(2)
     print("coffe done")
+    return f"Data - coffee"
+
+
+async def make_cereal():
+    print("Making cereal bowl")
+    await asyncio.sleep(4)
+    print("Cereal done")
+    return f"Data - cereal"
 
 
 async def main():
     # Request to event loop to schedule
-    task1 = asyncio.create_task(cooking_eggs())  # con-currently
-    task2 = asyncio.create_task(make_coffee())
+
+    all_tasks = [
+        cooking_eggs(),
+        make_coffee(),
+        make_cereal(),
+    ]
+
     # Waiting for the background task
     print("Bread toast 1")
     print("Bread toast 2")
     print("Bread toast 3")
 
-    await task1
+    # await asyncio.gather(all_tasks[0], all_tasks[1],all_tasks[2])
+    # Order given in create task will be order of data
+    data = await asyncio.gather(*all_tasks)
+    print(data)
 
 
 asyncio.run(main())

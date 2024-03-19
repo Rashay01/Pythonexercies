@@ -63,21 +63,64 @@ async def get_user_name():
 # asyncio.run(main())
 
 
-# Task Change all users profile pic to flag
-async def change_avatar(id, img_url):
+async def create_user(user):
+    url = f"https://65f82847b4f842e808871317.mockapi.io/users/"
+    async with aiohttp.ClientSession() as session:
+        async with session.post(url, json=user) as response:
+            user = await response.json()
+            return user
+
+
+# Return --> co-routine
+# async def main():
+#     new_user = {
+#         "name": "John Doe",
+#         "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/524.jpg",
+#     }
+#     print(await create_user(new_user))
+
+
+# asyncio.run(main())
+
+
+# Task 2
+
+
+# async def main():
+#     flag_url = (
+#         "https://th.bing.com/th/id/OIP.K4XfRyYNnlwsR9-qdE-lrQAAAA?rs=1&pid=ImgDetMain"
+#     )
+
+#     user_list = ["Alex", "Gemma", "Thato", "Lilitha", "Dhara"]
+#     all_tasks = [
+#         asyncio.create_task(create_user({"name": name, "avatar": flag_url}))
+#         for name in user_list
+#     ]
+#     users_created = await asyncio.gather(*all_tasks)
+#     pprint(users_created)
+
+
+# asyncio.run(main())
+
+
+# Task3
+# Change all users profile pic to flag
+async def update_avatar(id, img_url):
     url = f"https://65f82847b4f842e808871317.mockapi.io/users/{id}"
     body = {"avatar": img_url}
     async with aiohttp.ClientSession() as session:
-        async with session.put(url, data=body) as response:
+        async with session.put(url, json=body) as response:
             user = await response.json()
             return user
 
 
 async def main():
-    flag_url = "https://static.vecteezy.com/system/resources/previews/020/297/008/non_2x/south-africa-human-rights-day-march-21-for-greeting-card-poster-banner-template-free-vector.jpg"
+    flag_url = (
+        "https://th.bing.com/th/id/OIP.K4XfRyYNnlwsR9-qdE-lrQAAAA?rs=1&pid=ImgDetMain"
+    )
     users = await get_users_name()
     users_tasks = [
-        asyncio.create_task(change_avatar(the_user["id"], flag_url))
+        asyncio.create_task(update_avatar(the_user["id"], flag_url))
         for the_user in users
     ]
     updated_users = await asyncio.gather(*users_tasks)

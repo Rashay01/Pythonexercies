@@ -66,10 +66,10 @@ async def hello_word():
 
 # Event loop : behind the async function
 # code runs in a call stack
-# Event loop pushes to stackk when the call stack is empty
+# Event loop pushes to stack when the call stack is empty
 #
 
-# Aync without even loop
+# Async without even loop
 # async def background_task():
 #     print("Start background task")
 #     await asyncio.sleep(3)
@@ -86,7 +86,7 @@ async def hello_word():
 
 # Async with event loop
 # async def cooking_eggs():
-#     print("egss cooking")
+#     print("eggs cooking")
 #     await asyncio.sleep(3)
 #     print("Eggs cooked")
 
@@ -94,7 +94,7 @@ async def hello_word():
 # async def make_coffee():
 #     print("coffee brewing")
 #     await asyncio.sleep(2)
-#     print("coffe done")
+#     print("coffee done")
 
 
 # Old method
@@ -129,7 +129,7 @@ async def hello_word():
 
 
 # async def cooking_eggs():
-#     print("egss cooking")
+#     print("eggs cooking")
 #     await asyncio.sleep(3)
 #     print("Eggs cooked")
 #     return f"Data - Eggs"
@@ -138,7 +138,7 @@ async def hello_word():
 # async def make_coffee():
 #     print("coffee brewing")
 #     await asyncio.sleep(2)
-#     print("coffe done")
+#     print("coffee done")
 #     return f"Data - coffee"
 
 
@@ -172,7 +172,7 @@ async def hello_word():
 
 
 async def cooking_eggs():
-    print("egss cooking")
+    print("eggs cooking")
     await asyncio.sleep(3)
     print("Eggs cooked")
     return f"Data - Eggs"
@@ -181,7 +181,7 @@ async def cooking_eggs():
 async def make_coffee():
     print("coffee brewing")
     await asyncio.sleep(2)
-    print("coffe done")
+    print("coffee done")
     return f"Data - coffee"
 
 

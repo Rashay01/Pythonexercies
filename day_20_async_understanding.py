@@ -74,10 +74,10 @@ result1 = cooking_eggs()  # co-routine  Box(f"Data - Eggs cooked")  | Box -> co-
 result3 = make_coffee()  # co-routine  Box(f"Data - Coffee ☕")
 # result4 = await make_coffee()          f"Data - Eggs cooked"
 
-type(result1)  # co-routine
-type(result2)  # string
+# type(result1)  # co-routine
+# type(result2)  # string
 
-gather(result1, result3)  # 2            Box([output1, output2]) | Box -> co-routine
-# await gather(result1, result3) # 2    [output1, output2]
-# gather(*[result1, result3]) # 2
-gather(result2, result4)
+# gather(result1, result3)  # 2            Box([output1, output2]) | Box -> co-routine
+# # await gather(result1, result3) # 2    [output1, output2]
+# # gather(*[result1, result3]) # 2
+# gather(result2, result4)
